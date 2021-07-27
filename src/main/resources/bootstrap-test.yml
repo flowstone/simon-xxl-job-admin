@@ -44,12 +44,11 @@ spring:
     password: xxx
     from: xxx
     properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.socketFactory.class: javax.net.ssl.SSLSocketFactory
+
 mybatis:
   mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
 
