@@ -5,8 +5,6 @@ server:
 spring:
   application:
     name: xxl-job-admin
-  profiles:
-    active: develop
   main:
     allow-bean-definition-overriding: true
   cloud:
