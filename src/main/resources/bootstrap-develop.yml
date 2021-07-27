@@ -1,5 +1,7 @@
 server:
-  port: 8099
+  port: 8999
+  servlet:
+    context-path: /xxl-job-admin
 spring:
   application:
     name: xxl-job-admin
@@ -21,11 +23,10 @@ spring:
         server-addr: ${NACOS_ADDR:127.0.0.1}:${NACOS_PORT:8848}
         group: WEB_BACKEND
         namespace: ${NACOS_NAMESPACE:20001}
-  servlet:
-    context-path: /xxl-job-admin
   mvc:
     servlet:
       load-on-startup: 0
+    static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
   freemarker:
