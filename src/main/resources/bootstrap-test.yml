@@ -1,0 +1,67 @@
+server:
+  port: 8999
+  servlet:
+    context-path: /xxl-job-admin
+spring:
+  application:
+    name: xxl-job-admin
+  profiles:
+    active: develop
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NACOS_ADDR:127.0.0.1}:${NACOS_PORT:8848}
+        file-extension: yml
+        group: WEB_BACKEND
+        namespace: ${NACOS_NAMESPACE:20001}
+        extension-configs[0]:
+          data-id: allinabc-common.yml
+        refreshEnabled: false
+      discovery:
+        server-addr: ${NACOS_ADDR:127.0.0.1}:${NACOS_PORT:8848}
+        group: WEB_BACKEND
+        namespace: ${NACOS_NAMESPACE:20001}
+  mvc:
+    servlet:
+      load-on-startup: 0
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    charset: utf-8
+    request-context-attribute: request
+  datasource:
+    url: jdbc:oracle:thin:@192.168.2.82:11521/XE
+    username: XXL_JOB
+    password: XXL_JOB
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  mail:
+    host: smtp.qq.com
+    port: 25
+    username: xxx@qq.com
+    password: xxx
+    from: xxx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+mybatis:
+  mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
+
+xxl:
+  job:
+    accessToken:
+    i18n: zh_CN
+    triggerpool:
+      fast:
+        max: 200
+      slow:
+        max: 100
+    logretentiondays: 30
