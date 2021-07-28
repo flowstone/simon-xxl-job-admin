@@ -61,3 +61,7 @@ xxl:
       slow:
         max: 100
     logretentiondays: 30
+management:
+  health:
+    mail:
+      enabled: false
