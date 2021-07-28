@@ -35,4 +35,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
-
+management:
+  health:
+    mail:
+      enabled: false

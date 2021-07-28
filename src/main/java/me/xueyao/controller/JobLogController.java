@@ -96,15 +96,14 @@ public class JobLogController {
 		JobInfoController.validPermission(request, jobGroup);	// 仅管理员支持查询全部；普通用户仅支持查询有权限的 jobGroup
 		
 		// parse param
-		String triggerTimeStart = null;
-		String triggerTimeEnd = null;
+		Date triggerTimeStart = null;
+		Date triggerTimeEnd = null;
 		if (filterTime!=null && filterTime.trim().length()>0) {
 			String[] temp = filterTime.split(" - ");
 			if (temp.length == 2) {
-				//triggerTimeStart = DateUtil.parseDateTime(temp[0]);
-				//triggerTimeEnd = DateUtil.parseDateTime(temp[1]);
-				triggerTimeStart =temp[0].trim();
-				triggerTimeEnd = temp[1].trim();
+				triggerTimeStart = DateUtil.parseDateTime(temp[0]);
+				triggerTimeEnd = DateUtil.parseDateTime(temp[1]);
+
 			}
 		}
 		

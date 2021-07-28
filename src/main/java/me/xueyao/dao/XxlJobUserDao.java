@@ -13,8 +13,8 @@ import java.util.List;
 public interface XxlJobUserDao {
 
 	public List<XxlJobUser> pageList(@Param("offset") int offset,
-									 @Param("pagesize") int pagesize,
-									 @Param("username") String username,
+                                     @Param("pagesize") int pagesize,
+                                     @Param("username") String username,
 									 @Param("role") int role);
 	public int pageListCount(@Param("offset") int offset,
 							 @Param("pagesize") int pagesize,

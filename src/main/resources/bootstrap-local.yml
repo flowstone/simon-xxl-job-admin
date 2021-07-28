@@ -2,26 +2,12 @@ server:
   port: 8999
   servlet:
     context-path: /xxl-job-admin
-
 spring:
   application:
     name: xxl-job-admin
   main:
     allow-bean-definition-overriding: true
-  cloud:
-    nacos:
-      config:
-        server-addr: ${NACOS_ADDR:127.0.0.1}:${NACOS_PORT:8848}
-        file-extension: yml
-        group: WEB_BACKEND
-        namespace: ${NACOS_NAMESPACE:20001}
-        extension-configs[0]:
-          data-id: allinabc-common.yml
-        refreshEnabled: false
-      discovery:
-        server-addr: ${NACOS_ADDR:127.0.0.1}:${NACOS_PORT:8848}
-        group: WEB_BACKEND
-        namespace: ${NACOS_NAMESPACE:20001}
+
   mvc:
     servlet:
       load-on-startup: 0
